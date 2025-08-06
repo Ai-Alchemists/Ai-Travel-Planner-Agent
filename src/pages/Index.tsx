@@ -34,8 +34,7 @@ const Index = () => {
   const [formData, setFormData] = useState<TripFormData | null>(null);
 
   useEffect(() => {
-    const apiKeys = TripPlannerService.getApiKeys();
-    setHasApiKeys(!!(apiKeys.gemini && apiKeys.tavily));
+    setHasApiKeys(true); // API keys are now hardcoded
   }, []);
 
   const handleApiSetupComplete = () => {
@@ -78,9 +77,6 @@ const Index = () => {
     setFormData(null);
   };
 
-  if (!hasApiKeys) {
-    return <ApiKeySetup onSetupComplete={handleApiSetupComplete} />;
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-primary/5">

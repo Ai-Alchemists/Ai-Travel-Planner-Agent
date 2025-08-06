@@ -53,10 +53,10 @@ export class TripPlannerService {
     console.log('API keys saved successfully');
   }
 
-  static getApiKeys(): { gemini: string | null; tavily: string | null } {
+  static getApiKeys(): { gemini: string; tavily: string } {
     return {
-      gemini: localStorage.getItem(this.API_KEY_STORAGE_KEY),
-      tavily: localStorage.getItem(this.TAVILY_API_KEY_STORAGE_KEY)
+      gemini: 'AIzaSyBWhNSkDi-wUKcQ608odo4mhH_TFzPTXns',
+      tavily: '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'
     };
   }
 
